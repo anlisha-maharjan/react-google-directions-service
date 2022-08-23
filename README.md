@@ -8,12 +8,13 @@ Feel free to leave a ⭐ as motivation if this was useful to you 😊
 
 - Node >= 14.0.0
 - npm >= 5.6
+- Google Maps API key - place in public > index.html
 
 ## Context
 ```bash
 - React 17.0.2
 - Packages:
-  - react-google-maps
+  - @react-google-maps/api
   - @mui/material
 ```
 
