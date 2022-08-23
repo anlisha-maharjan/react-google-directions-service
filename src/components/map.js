@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as Mui from "@mui/material";
-import { withGoogleMap, GoogleMap, DirectionsRenderer } from "react-google-maps";
+import { GoogleMap, DirectionsRenderer } from "@react-google-maps/api";
 import moment from "moment";
 import { IconClock, IconRoute } from "src/components/svg";
 
@@ -48,9 +48,9 @@ const Map = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.values.pickupLocation, props.values.dropOffLocation, props.values.waypoint]);
 
-  const MapWithAMarker = withGoogleMap(() => (
+  const MapWithAMarker = () => (
     <GoogleMap defaultZoom={13}>{directions && <DirectionsRenderer directions={directions} />}</GoogleMap>
-  ));
+  );
   return (
     <Mui.Paper className={`p-0 border-rad-0 shadow-none overflow-hidden`}>
       <MapWithAMarker
