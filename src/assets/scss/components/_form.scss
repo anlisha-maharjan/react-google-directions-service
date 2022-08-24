@@ -1,0 +1,451 @@
+input {
+  /* Chrome, Safari, Edge, Opera */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+@mixin defaultFormField() {
+  width: 100%;
+
+  &.MuiFormControl-marginNormal {
+    margin: 0;
+  }
+
+  .MuiFormLabel-root {
+    display: flex;
+    align-items: center;
+    color: $darkBlue;
+    font-size: 1.6rem;
+    font-weight: 500;
+    transform: translate(0, 0) scale(1);
+
+    &.MuiInputLabel-shrink {
+      transform: translate(0, -2rem) scale(1);
+    }
+
+    + .MuiInput-formControl {
+      margin: 0;
+    }
+
+    .tooltip-default {
+      pointer-events: auto;
+    }
+
+    svg {
+      width: 1.8rem;
+      height: 1.8rem;
+      margin-left: 0.8rem;
+
+      * {
+        fill: $darkBlue;
+      }
+    }
+
+    &.MuiInputLabel-outlined {
+      transform: translate(1.4rem, 1.3rem) scale(1);
+
+      &.MuiInputLabel-shrink {
+        transform: translate(0, -2.6rem) scale(1);
+      }
+    }
+
+    &.Mui-error {
+      color: $errorColor;
+    }
+
+    &.Mui-disabled {
+      @extend .text-color-muted;
+      @extend .svg-color-muted;
+    }
+  }
+
+  .MuiInputBase-root {
+    padding-right: 0;
+    z-index: 1;
+
+    &.MuiOutlinedInput-root {
+      background-color: transparent;
+
+      &.Mui-focused {
+        background-color: $inputBg;
+
+        .MuiSelect-select {
+          background-color: transparent;
+        }
+      }
+
+      input,
+      .MuiSelect-root {
+        padding: $inputPadding;
+        color: $textColor;
+
+        &[readonly],
+        &[disabled] {
+          color: #67686a;
+
+          + .MuiOutlinedInput-notchedOutline {
+            display: none;
+          }
+        }
+      }
+
+      .MuiSelect-root {
+        padding: 1.4rem 5rem 1.4rem 2rem;
+
+        .icon-selected {
+          display: none;
+        }
+
+        .chip-wrap {
+          &:not(:last-child) {
+            margin-right: 0.5rem;
+          }
+        }
+
+        .MuiChip-root {
+          margin: -0.7rem 0;
+          padding: 0.6rem 0.8rem;
+          border-radius: 5px;
+          background-color: $primaryColor;
+          color: lighten($color: $primaryColor, $amount: 35);
+        }
+      }
+
+      .select-icon {
+        position: absolute;
+        right: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: -1;
+      }
+
+      .MuiButtonBase-root {
+        .select-icon {
+          position: static;
+          flex-shrink: 0;
+          transform: translateY(0);
+          z-index: 1;
+        }
+      }
+
+      textarea {
+        padding: 0.4rem 0.8rem;
+        color: $formFieldTextColor;
+        line-height: 1.5;
+      }
+
+      &.Mui-error {
+        .MuiOutlinedInput-notchedOutline {
+          border-color: $errorColor;
+        }
+      }
+    }
+
+    input:-internal-autofill-selected {
+      background-color: transparent;
+    }
+
+    &.Mui-disabled {
+      input,
+      textarea,
+      .MuiInputAdornment-root {
+        color: $grey;
+      }
+
+      .MuiOutlinedInput-notchedOutline {
+        display: none;
+      }
+
+      .MuiInputAdornment-root {
+        * {
+          color: $grey;
+        }
+      }
+    }
+
+    .MuiInputAdornment-root {
+      &.MuiInputAdornment-positionStart {
+        + input {
+          padding-left: 0;
+        }
+
+        @include svgColor(#bdbdbd);
+      }
+
+      &.MuiInputAdornment-positionEnd {
+        .MuiButtonBase-root {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .MuiOutlinedInput-notchedOutline {
+    border-color: $inputBorderColor;
+
+    legend {
+      width: 0 !important;
+      font-size: 0;
+
+      span {
+        padding: 0;
+      }
+    }
+  }
+
+  .MuiFormHelperText-root {
+    margin: 0.5rem;
+  }
+
+  .MuiAutocomplete-root {
+    width: 100% !important;
+  }
+}
+
+@mixin darkFormField() {
+  .MuiFormLabel-root {
+    color: $primaryColor;
+
+    svg {
+      * {
+        fill: darken($color: $primaryColor, $amount: 20);
+      }
+    }
+  }
+
+  .MuiInputBase-root {
+    background-color: transparent;
+
+    &.MuiOutlinedInput-root {
+      background-color: transparent;
+
+      input,
+      .MuiSelect-root {
+        color: #fff;
+      }
+
+      textarea {
+        color: #fff;
+      }
+
+      &.Mui-focused {
+        background-color: #1c1c1c;
+
+        .MuiSelect-select {
+          background-color: transparent;
+        }
+      }
+    }
+
+    .MuiInputAdornment-root {
+      &.MuiInputAdornment-positionStart {
+        * {
+          color: #ffffff;
+        }
+      }
+
+      &.MuiInputAdornment-positionEnd {
+        * {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  &.date-time-picker {
+    .MuiInputBase-root {
+      background-color: transparent;
+
+      &.MuiOutlinedInput-root {
+        input,
+        .MuiSelect-root {
+          color: #fff;
+        }
+
+        textarea {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .MuiOutlinedInput-notchedOutline {
+    border-color: darken($color: $primaryColor, $amount: 25);
+  }
+}
+
+@mixin horizontalField() {
+  margin-top: 0 !important;
+
+  .MuiFormControl-root {
+    flex-direction: row;
+
+    .MuiFormLabel-root {
+      margin-right: 2.5rem;
+      flex-shrink: 0;
+      position: static !important;
+      transform: translate(0) scale(1) !important;
+    }
+  }
+}
+
+.default-form-field {
+  @include defaultFormField();
+
+  &-dark {
+    @include defaultFormField();
+    @include darkFormField();
+  }
+}
+
+.default-form {
+  display: flex;
+  flex-direction: column;
+
+  .form-group {
+    width: 100%;
+    margin: 2.8rem 0;
+
+    label {
+      display: block;
+      transform: translateY(-2.5rem);
+    }
+
+    .MuiFormControl-root {
+      @include defaultFormField();
+    }
+
+    .MuiAutocomplete-root {
+      .MuiFormControl-root {
+        .MuiInputBase-root {
+          padding-top: 0;
+          padding-bottom: 0;
+          padding-left: 0;
+          padding-right: 3.5rem;
+
+          input {
+            padding-right: 0;
+            color: $formFieldTextColor;
+          }
+
+          .MuiChip-root {
+            border: 1px solid rgba($color: #707070, $alpha: 0.6);
+            border-radius: 4px;
+            background-color: transparent;
+            color: $bluish-1;
+
+            &:not(:first-child) {
+              margin-left: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    &.horizontal {
+      @include horizontalField();
+    }
+
+    &-dark {
+      @extend .form-group;
+
+      .MuiFormControl-root {
+        .MuiFormLabel-root {
+          color: $primaryColor;
+
+          svg {
+            * {
+              fill: darken($color: $primaryColor, $amount: 20);
+            }
+          }
+        }
+
+        .MuiInputBase-root {
+          background-color: transparent;
+
+          &.MuiOutlinedInput-root {
+            background-color: transparent;
+
+            input,
+            .MuiSelect-root {
+              color: #fff;
+            }
+
+            textarea {
+              color: #fff;
+            }
+
+            &.Mui-focused {
+              background-color: #1c1c1c;
+
+              .MuiSelect-select {
+                background-color: transparent;
+              }
+            }
+          }
+
+          .MuiInputAdornment-root {
+            &.MuiInputAdornment-positionStart {
+              * {
+                color: #ffffff;
+              }
+            }
+
+            &.MuiInputAdornment-positionEnd {
+              * {
+                color: #ffffff;
+              }
+            }
+          }
+        }
+
+        &.date-time-picker {
+          .MuiInputBase-root {
+            background-color: transparent;
+
+            &.MuiOutlinedInput-root {
+              input,
+              .MuiSelect-root {
+                color: #fff;
+              }
+
+              textarea {
+                color: #fff;
+              }
+            }
+          }
+        }
+
+        .MuiOutlinedInput-notchedOutline {
+          border-color: darken($color: $primaryColor, $amount: 25);
+        }
+      }
+
+      .MuiAutocomplete-root {
+        .MuiIconButton-label {
+          .MuiSvgIcon-root {
+            * {
+              fill: #fff;
+            }
+          }
+        }
+      }
+
+      &.horizontal {
+        @include horizontalField();
+      }
+    }
+  }
+
+  &.center {
+    align-items: center;
+  }
+}
