@@ -1,6 +1,11 @@
 ## About
 
-React application that uses google map directions service to return efficient time and travel path between multiple waypoints. Display a polyline drawing the route on a map.
+React application that uses Google Maps API Directions Service to return efficient time and travel path between multiple locations. Display the total distance and total duration and plot the driving directions and route on map.
+
+Use Case:
+- One can enter source and destination address; For the address field, google places autocomplete is implemented.
+- One can also add multiple waypoints/stops between source and destination address.
+- Onchange in any address field, The Map and the Directions service is initialized to plot the driving directions and route on map and display the total distance and total duration.
 
 Feel free to leave a ⭐ as motivation if this was useful to you 😊
 
@@ -20,6 +25,7 @@ Feel free to leave a ⭐ as motivation if this was useful to you 😊
   - @mui/material
   - use-places-autocomplete
   - formik
+  - node-sass
 ```
 
 ## Getting started

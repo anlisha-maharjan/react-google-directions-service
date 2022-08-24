@@ -48,29 +48,13 @@ const Map = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.values.pickupLocation, props.values.dropOffLocation, props.values.waypoint]);
 
-  const MapWithAMarker = () => (
-    <GoogleMap defaultZoom={13}>{directions && <DirectionsRenderer directions={directions} />}</GoogleMap>
-  );
   return (
     <Mui.Paper className={`p-0 border-rad-0 shadow-none overflow-hidden`}>
-      <MapWithAMarker
-        containerElement={<div className="map-item" />}
-        mapElement={
-          <div
-            className="map-item"
-            style={{
-              height: "30rem",
-            }}
-          />
-        }
-      />
+      <GoogleMap zoom={13} mapContainerStyle={{ height: "30rem" }}>
+        {directions && <DirectionsRenderer directions={directions} />}
+      </GoogleMap>
 
-      <Mui.Box
-        display="flex"
-        justifyContent="space-between"
-        flexWrap="wrap"
-        className="p-2 background-color-color1"
-      >
+      <Mui.Box display="flex" justifyContent="space-between" flexWrap="wrap" className="p-2 background-color-color1">
         <Mui.Box display="flex" alignItems="center" className="svg-color-primary svg-size-small-2x">
           <IconRoute />
           <Mui.Typography component="h3" variant="h3" className="ml-2 font-weight-medium text-color-primary">
