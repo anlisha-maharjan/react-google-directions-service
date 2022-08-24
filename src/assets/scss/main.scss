@@ -7,5 +7,10 @@
 @import "./base/normalize";
 @import "./base/typography";
 
+/* Component import */
+@import "./components/menu";
+@import "./components/form";
+@import "./components/card";
+
 /* Pages import */
 @import "./pages/website";
