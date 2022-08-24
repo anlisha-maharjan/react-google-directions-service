@@ -3,7 +3,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import * as Mui from "@mui/material";
 import { Formik, Form } from "formik";
 import theme from "src/configs/theme";
-import Location from "src/components/waypoint";
+import Location from "src/components/location";
 import Map from "src/components/map";
 
 function App() {

@@ -1,7 +1,7 @@
 import React from "react";
 import * as Mui from "@mui/material";
 import { Field, FieldArray } from "formik";
-import {  IconAdd, IconTrash } from "src/components/svg";
+import { IconAdd, IconTrash } from "src/components/svg";
 import GoogleAutocomplete from "src/components/autocomplete";
 
 const Location = (props) => {
@@ -58,8 +58,6 @@ const Location = (props) => {
                           <GoogleAutocomplete
                             variant={"outlined"}
                             placeholder="Enter a Waypoint"
-                            touched={props.touched?.waypoint?.[index]?.location}
-                            error={props.errors?.waypoint?.[index]?.location}
                             callback={(description) => {
                               props.setFieldValue(`waypoint.${index}.location`, description || "");
                             }}

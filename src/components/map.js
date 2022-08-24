@@ -69,7 +69,6 @@ const Map = (props) => {
         display="flex"
         justifyContent="space-between"
         flexWrap="wrap"
-        gridGap="2rem"
         className="p-2 background-color-color1"
       >
         <Mui.Box display="flex" alignItems="center" className="svg-color-primary svg-size-small-2x">
