@@ -8,14 +8,18 @@ Feel free to leave a ⭐ as motivation if this was useful to you 😊
 
 - Node >= 14.0.0
 - npm >= 5.6
-- Google Maps API key - place in public > index.html
+- Google Maps API key 
+- Enable Directions API library in Google Cloud Console 
+- Include Maps JavaScript Library - Place your api key in public/index.html
 
 ## Context
 ```bash
-- React 17.0.2
+- React 18.2.0
 - Packages:
   - @react-google-maps/api
   - @mui/material
+  - use-places-autocomplete
+  - formik
 ```
 
 ## Getting started
