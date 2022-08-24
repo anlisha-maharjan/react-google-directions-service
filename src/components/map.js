@@ -50,7 +50,7 @@ const Map = (props) => {
 
   return (
     <Mui.Paper className={`p-0 border-rad-0 shadow-none overflow-hidden`}>
-      <GoogleMap zoom={13} mapContainerStyle={{ height: "30rem" }}>
+      <GoogleMap zoom={13} mapContainerStyle={{ height: "60rem" }}>
         {directions && <DirectionsRenderer directions={directions} />}
       </GoogleMap>
 
