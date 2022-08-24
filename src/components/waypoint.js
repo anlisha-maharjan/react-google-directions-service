@@ -1,32 +1,18 @@
 import React from "react";
 import * as Mui from "@mui/material";
 import { Field, FieldArray } from "formik";
-import { IconInfo, IconAdd, IconTrash } from "src/components/svg";
+import {  IconAdd, IconTrash } from "src/components/svg";
 import GoogleAutocomplete from "src/components/autocomplete";
 
 const Location = (props) => {
   return (
-    <Mui.Card className="default-card-dark-card pos-relative pb-5">
+    <Mui.Card className="default-card-dark-card pos-relative">
       <Mui.Grid container spacing={3}>
-        <Mui.Grid item xs={12} md={12} className={`form-group-dark`}>
+        <Mui.Grid item xs={12} md={12} className="form-group-dark">
           <Field name="pickupLocation">
             {({ field, meta }) => (
               <GoogleAutocomplete
-                label={
-                  <>
-                    Pick-Up Location{" "}
-                    <Mui.Tooltip
-                      className="tooltip-default"
-                      arrow
-                      placement="bottom-start"
-                      title={"The address where your journey will start"}
-                    >
-                      <span>
-                        <IconInfo />
-                      </span>
-                    </Mui.Tooltip>
-                  </>
-                }
+                label={"Start Location"}
                 variant={"outlined"}
                 placeholder="Enter a Location"
                 defaultValue={props.values?.pickupLocation || ""}
@@ -59,7 +45,7 @@ const Location = (props) => {
                   >
                     <IconAdd />
                   </Mui.IconButton>
-                  <Mui.Typography className="text-color-white font-weight-normal" component="h5" variant="h5">
+                  <Mui.Typography className="text-color-primary font-weight-normal" component="h5" variant="h5">
                     Add your waypoint / Add stops
                   </Mui.Typography>
                 </Mui.Box>
@@ -101,21 +87,7 @@ const Location = (props) => {
           <Field name="dropOffLocation">
             {({ field, meta }) => (
               <GoogleAutocomplete
-                label={
-                  <>
-                    Drop-Off Location{" "}
-                    <Mui.Tooltip
-                      className="tooltip-default"
-                      arrow
-                      placement="bottom-start"
-                      title={"The address where your journey will end"}
-                    >
-                      <span>
-                        <IconInfo />
-                      </span>
-                    </Mui.Tooltip>
-                  </>
-                }
+                label={"End Location"}
                 variant={"outlined"}
                 placeholder="Enter a Location"
                 defaultValue={props.values?.dropOffLocation || ""}

@@ -13,7 +13,7 @@ function App() {
         <Mui.Box className="section-default">
           <Mui.Container maxWidth="md" className="pos-relative overflow-visible">
             <Mui.Typography className="text-color-white font-weight-normal mb-2" component="h5" variant="h5">
-              Please enter waypoints
+              Enter start/end location with multiple waypoints!
             </Mui.Typography>
             <Formik
               enableReinitialize={true}
@@ -27,8 +27,8 @@ function App() {
               onSubmit={() => {}}
             >
               {({ values, setFieldValue }) => (
-                <Form className="default-form pos-relative mt-5">
-                  <Mui.Grid container spacing={4} wrap="wrap">
+                <Form className="default-form pos-relative">
+                  <Mui.Grid container spacing={2} wrap="wrap">
                     <Mui.Grid item xs={12} md={6}>
                       <Location values={values} setFieldValue={setFieldValue} />
                     </Mui.Grid>
