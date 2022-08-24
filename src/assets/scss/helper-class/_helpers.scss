@@ -1,23 +1,14 @@
-@import './colors';
-@import './display';
-@import './position';
-@import './margin-padding';
-@import './transform';
-@import './border';
-@import './text';
-@import './image';
+@import "./colors";
+@import "./display";
+@import "./position";
+@import "./margin-padding";
+@import "./transform";
+@import "./border";
+@import "./text";
+@import "./image";
 
 .pointer {
   cursor: pointer !important;
-}
-
-.speprator {
-  border-style: solid;
-  border-color: rgba($color: #8898AA, $alpha: 0.8);
-
-  &--horizontal-bottom {
-    border-width: 0 0 1px;
-  }
 }
 
 .shadow {
@@ -105,7 +96,7 @@
 
 /* --- Filter --- */
 .blur {
-  filter: blur(2px)
+  filter: blur(2px);
 }
 
 .pointer-none {
@@ -115,4 +106,3 @@
     pointer-events: none;
   }
 }
-
